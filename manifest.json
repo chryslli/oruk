@@ -1,0 +1,14 @@
+{
+	"name": "Old Rochester UK",
+	"short_name": "ORRUK",
+	"start_url": "index.html",
+	"display": "standalone",
+	"background_color": "#0f151c",
+	"theme_color": "#b8d0e7",
+	"orientation": "portrait-primary",
+	"icons": [{
+		"src": "/img/logo.svg",
+		"type": "image/svg+xml",
+		"sizes": "any"
+	}]
+}

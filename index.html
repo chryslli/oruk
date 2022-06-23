@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>ORR UK</title>
+		<link rel="icon" href="https://oldrochester.org.uk/img/logo.svg" type="image/svg">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- SEO -->
+		<meta name="description" content="The Parody Website of oldrochester.org">
+		<meta name="og:title" content="ORR UK">
+		<meta name="og:description" content="The Parody Website of oldrochester.org">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="1200">
+		<meta name="og:image" content="https://oldrochester.org.uk/img/logo.png">
+		<meta name="og:url" content="oldrochester.org.uk">
+		<link rel="shortcut icon" href="https://oldrochester.org.uk/img/logo.png">
+
+	<!-- Import -->
+		<link rel="manifest" href="manifest.json" />
+		<link rel="stylesheet" href="css/styles.css">
+	</head>
+	<body>
+	<div class="center">
+		<div class="center-text">
+			<h1>[ loading... ]</h1>
+		</div>
+	</div>
+   	<script>
+		if ("serviceWorker" in navigator) {
+  			window.addEventListener("load", _ => {
+    			navigator.serviceWorker.register("/serviceWorker.js").catch(err => console.log("Error loading Service Worker", err))
+		})}
+		
+		update()
+		
+		let interval = setInterval(() => update(), 5)
+		
+		function update(){
+			let days = (Math.round(((new Date('6/23/22 10:08').getTime() - Date.now() )/ (1000 * 3600 * 24)) * 10000000) / 10000000);
+			if (days.toString().split('.').length < 7) {
+				days = days.toString().split('.')
+				days[2] = days[1].split('')
+				days[2].push(0,0,0,0,0,0,0,0)
+				days[2].length = 7
+				days[2] = days[2].join('')
+				days = `${days[0]}.${days[2]}`
+			}
+          		document.querySelector('h1').innerHTML = `${days} day${Math.abs(Number(days))===1?'':'s'}`;
+		}
+	   </script>
+	</body>
+</html>
