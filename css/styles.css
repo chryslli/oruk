@@ -1,0 +1,16 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #0f151c;
+	color: #cce6ff;
+	font-family: 'Courier New', monospace;
+}
+
+.center {
+	padding: 2vh 2vw;
+ 	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 96vh;
+	width: 96vw;
+}
